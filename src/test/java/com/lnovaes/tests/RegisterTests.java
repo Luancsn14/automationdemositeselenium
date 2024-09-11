@@ -201,4 +201,11 @@ public class RegisterTests extends BaseTest {
 		Assert.assertEquals(13, registerPage.getBirthMonthOptions().size());
 		Assert.assertEquals(101, registerPage.getBirthYearOptions().size());
 	}
+	
+	@Test
+	public void testUploadPhoto() {
+		registerPage.uploadPhoto();
+		
+		Assert.assertTrue(registerPage.getUploadedPhotoName().contains("testImage.jpg"));
+	}
 }

@@ -2,6 +2,7 @@ package com.lnovaes.core;
 
 import static com.lnovaes.core.DriverFactory.getDriver;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -116,5 +117,18 @@ public class BasePage {
 			values.add(opcao.getText());
 		}
 		return values;
+	}
+	
+	/************ Upload file ************/
+	
+	public void uploadFile(String file, By uploadField) {
+		File uploadFile = new File(file);
+		
+		WebElement fileInput = getDriver().findElement(uploadField);
+	    fileInput.sendKeys(uploadFile.getAbsolutePath());
+	}
+	
+	public String getUploadedFileName(By uploadField) {		
+		return getDriver().findElement(uploadField).getAttribute("value");
 	}
 }

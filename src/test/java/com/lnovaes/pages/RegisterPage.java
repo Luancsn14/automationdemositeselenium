@@ -1,5 +1,6 @@
 package com.lnovaes.pages;
 
+import java.io.File;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -166,5 +167,15 @@ public class RegisterPage extends BasePage {
 	
 	public String getConfirmPassword() {
 		return getFieldText(By.id("secondpassword"));
+	}
+	
+	public void uploadPhoto() {
+		uploadFile(
+				"src" + File.separator + "test" + File.separator + "resources" + File.separator + "testImage.jpg", 
+				By.id("imagesrc"));
+	}
+	
+	public String getUploadedPhotoName() {
+		return getUploadedFileName(By.id("imagesrc"));
 	}
 }
