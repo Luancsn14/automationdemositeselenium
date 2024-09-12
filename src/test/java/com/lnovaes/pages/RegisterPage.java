@@ -176,6 +176,6 @@ public class RegisterPage extends BasePage {
 	}
 	
 	public String getUploadedPhotoName() {
-		return getUploadedFileName(By.id("imagesrc"));
+		return getElementValue(By.id("imagesrc"));
 	}
 }

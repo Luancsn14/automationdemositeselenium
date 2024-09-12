@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
+	
+	/************ Common ************/
+	
+	public String getElementValue(By by) {
+		return getDriver().findElement(by).getAttribute("value");
+	}
 	
 	/************ TextField and TextArea ************/
 	
@@ -128,7 +135,47 @@ public class BasePage {
 	    fileInput.sendKeys(uploadFile.getAbsolutePath());
 	}
 	
-	public String getUploadedFileName(By uploadField) {		
-		return getDriver().findElement(uploadField).getAttribute("value");
+	/************ Button ************/
+	
+	public void clickButton(By by) {
+		getDriver().findElement(by).click();
+	}
+	
+	public void clickButtonByText(String text) {
+		clickButton(By.xpath("//button[.='" + text + "']"));
+	}
+		
+	/************ Link ************/
+	
+	public void clickLink(String link) {
+		getDriver().findElement(By.linkText(link)).click();
+	}
+	
+	/************ Alerts ************/
+	
+	public String getAlertText(){
+		Alert alert = getDriver().switchTo().alert();
+		return alert.getText();
+	}
+	
+	public String getAlertTextAndAccept(){
+		Alert alert = getDriver().switchTo().alert();
+		String text = alert.getText();
+		alert.accept();
+		return text;		
+	}
+	
+	public String getAlertTextAndDismiss(){
+		Alert alert = getDriver().switchTo().alert();
+		String text = alert.getText();
+		alert.dismiss();
+		return text;
+		
+	}
+	
+	public void alertWrite(String value) {
+		Alert alert = getDriver().switchTo().alert();
+		alert.sendKeys(value);
+		alert.accept();
 	}
 }
