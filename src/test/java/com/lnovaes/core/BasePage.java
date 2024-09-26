@@ -23,6 +23,14 @@ public class BasePage {
 		return getDriver().findElement(by).getAttribute("value");
 	}
 	
+	public String getElementTarget(By by) {
+		return getDriver().findElement(by).getAttribute("target");
+	}
+	
+	public String getElementOnclick(By by) {
+		return getDriver().findElement(by).getAttribute("onclick");
+	}
+	
 	/************ TextField and TextArea ************/
 	
 	public void writeText(By by, String text) {
@@ -178,4 +186,32 @@ public class BasePage {
 		alert.sendKeys(value);
 		alert.accept();
 	}
+	
+	/************ Windows ************/
+	
+	public void accessBaseWindow(String window) {
+		getDriver().get(window);
+	}
+	
+	public void browserToNewWindow() {		
+		getDriver().switchTo().window((String) getDriver().getWindowHandles().toArray()[1]);
+	}
+	
+	public String getUrl() {
+		return getDriver().getCurrentUrl();
+	}
+	
+	public int getWindowsAmount() {
+		return getDriver().getWindowHandles().size();
+	}
+	
+	public List<String> getWindowsUrls() {	
+		List<String> windows = new ArrayList<>(getDriver().getWindowHandles());
+		List<String> urls = new ArrayList<>();
+		
+		for (String window : windows) {
+            urls.add(getDriver().switchTo().window(window).getCurrentUrl());
+        }		
+		return urls;
+	}	
 }

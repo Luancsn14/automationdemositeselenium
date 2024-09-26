@@ -8,12 +8,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import com.lnovaes.core.BasePage;
-import com.lnovaes.core.DriverFactory;
 
 public class RegisterPage extends BasePage {	
 	
 	public void accessRegisterWindow() {
-		DriverFactory.getDriver().get("https://demo.automationtesting.in/Register.html");
+		accessBaseWindow("https://demo.automationtesting.in/Register.html");
 	}
 	
 	public void setFirstName(String firstName) {

@@ -3,12 +3,11 @@ package com.lnovaes.pages;
 import org.openqa.selenium.By;
 
 import com.lnovaes.core.BasePage;
-import com.lnovaes.core.DriverFactory;
 
 public class AlertsPage extends BasePage {
 	
 	public void accessAlertsWindow() {
-		DriverFactory.getDriver().get("https://demo.automationtesting.in/Alerts.html");
+		accessBaseWindow("https://demo.automationtesting.in/Alerts.html");
 	}
 	
 	public void accessAlertWithOkTab() {
