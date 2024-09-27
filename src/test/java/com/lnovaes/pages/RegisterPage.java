@@ -12,7 +12,7 @@ import com.lnovaes.core.BasePage;
 public class RegisterPage extends BasePage {	
 	
 	public void accessRegisterWindow() {
-		accessBaseWindow("https://demo.automationtesting.in/Register.html");
+		accessUrl("https://demo.automationtesting.in/Register.html");
 	}
 	
 	public void setFirstName(String firstName) {
@@ -24,11 +24,11 @@ public class RegisterPage extends BasePage {
 	}
 	
 	public String getFirstNameValue() {
-		return getFieldValue(By.xpath("//input[@placeholder='First Name']"));
+		return getElementValue(By.xpath("//input[@placeholder='First Name']"));
 	}
 	
 	public String getLastNameValue() {
-		return getFieldValue(By.xpath("//input[@placeholder='Last Name']"));
+		return getElementValue(By.xpath("//input[@placeholder='Last Name']"));
 	}
 
 	public void setAddress(String address) {
@@ -36,7 +36,7 @@ public class RegisterPage extends BasePage {
 	}
 	
 	public String getAddress() {
-		return getFieldValue(By.xpath("//textarea[@ng-model='Adress']"));
+		return getElementValue(By.xpath("//textarea[@ng-model='Adress']"));
 	}
 
 	public void setEmail(String email) {
@@ -44,7 +44,7 @@ public class RegisterPage extends BasePage {
 	}
 	
 	public String getEmail() {
-		return getFieldValue(By.xpath("//input[@type='email']"));
+		return getElementValue(By.xpath("//input[@type='email']"));
 	}
 	
 	public String getEmailToolTip() {		
@@ -56,7 +56,7 @@ public class RegisterPage extends BasePage {
 	}
 	
 	public String getPhoneNumber() {
-		return getFieldValue(By.xpath("//input[@type='tel']"));
+		return getElementValue(By.xpath("//input[@type='tel']"));
 	}
 	
 	public void setGender(String value) {

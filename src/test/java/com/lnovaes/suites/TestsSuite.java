@@ -5,6 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import com.lnovaes.tests.AlertsTests;
+import com.lnovaes.tests.IframesTests;
 import com.lnovaes.tests.RegisterTests;
 import com.lnovaes.tests.WindowsTests;
 
@@ -12,7 +13,8 @@ import com.lnovaes.tests.WindowsTests;
 @SuiteClasses({
 	RegisterTests.class,
 	AlertsTests.class,
-	WindowsTests.class
+	WindowsTests.class,
+	IframesTests.class
 })
 public class TestsSuite {
 

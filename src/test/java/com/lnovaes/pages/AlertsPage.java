@@ -7,7 +7,7 @@ import com.lnovaes.core.BasePage;
 public class AlertsPage extends BasePage {
 	
 	public void accessAlertsWindow() {
-		accessBaseWindow("https://demo.automationtesting.in/Alerts.html");
+		accessUrl("https://demo.automationtesting.in/Alerts.html");
 	}
 	
 	public void accessAlertWithOkTab() {

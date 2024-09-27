@@ -31,15 +31,19 @@ public class BasePage {
 		return getDriver().findElement(by).getAttribute("onclick");
 	}
 	
+	public void clickElement(By by) {
+		getDriver().findElement(by).click();
+	}
+	
+	public String getElementH5Text(By by) {
+		return getDriver().findElement(by).getText();
+	}
+	
 	/************ TextField and TextArea ************/
 	
 	public void writeText(By by, String text) {
 		getDriver().findElement(by).clear();
 		getDriver().findElement(by).sendKeys(text);		
-	}
-	
-	public String getFieldValue(By by) {
-		return getDriver().findElement(by).getAttribute("value");
 	}
 	
 	public String getFieldText(By by) {
@@ -61,10 +65,6 @@ public class BasePage {
 	}
 	
 	/********* Radio And Check ************/
-	
-	public void clickElement(By by) {
-		getDriver().findElement(by).click();
-	}
 	
 	public boolean isRadioSelected(By by){
 		return getDriver().findElement(by).isSelected();
@@ -189,7 +189,7 @@ public class BasePage {
 	
 	/************ Windows ************/
 	
-	public void accessBaseWindow(String window) {
+	public void accessUrl(String window) {
 		getDriver().get(window);
 	}
 	
@@ -213,5 +213,15 @@ public class BasePage {
             urls.add(getDriver().switchTo().window(window).getCurrentUrl());
         }		
 		return urls;
-	}	
+	}
+	
+	/************ Frames ************/
+	
+	public void accessFrame(String id) {
+		getDriver().switchTo().frame(id);
+	}
+	
+	public void accessFrameByIndex(int index) {		
+		getDriver().switchTo().frame(index);
+	}
 }

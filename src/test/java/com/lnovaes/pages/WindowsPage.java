@@ -9,7 +9,7 @@ import com.lnovaes.core.BasePage;
 public class WindowsPage extends BasePage {
 	
 	public void accessWindowsWindow() {
-		accessBaseWindow("https://demo.automationtesting.in/Windows.html");
+		accessUrl("https://demo.automationtesting.in/Windows.html");
 	}
 	
 	public void accessOpenNewTabbedWindowsTab() {
