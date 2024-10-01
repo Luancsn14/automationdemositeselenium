@@ -35,8 +35,18 @@ public class BasePage {
 		getDriver().findElement(by).click();
 	}
 	
-	public String getElementH5Text(By by) {
+	public String getElementText(By by) {
 		return getDriver().findElement(by).getText();
+	}
+	
+	public void waitElementInvisibility(By element, int time) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(time));
+		wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(element)));
+	}
+	
+	public void waitElementVisibility(By element, int time) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(time));
+		wait.until(ExpectedConditions.visibilityOf(getDriver().findElement(element)));
 	}
 	
 	/************ TextField and TextArea ************/
@@ -224,4 +234,10 @@ public class BasePage {
 	public void accessFrameByIndex(int index) {		
 		getDriver().switchTo().frame(index);
 	}
+	
+	/************ Accordion ************/
+	
+	public boolean isExpanded(By by) {
+		return getDriver().findElement(by).isDisplayed();
+	}	
 }

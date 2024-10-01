@@ -35,6 +35,6 @@ public class IframesPage extends BasePage {
 	}
 	
 	public String getIframeTitle() {
-		return getElementH5Text(By.xpath("//h5"));
+		return getElementText(By.xpath("//h5"));
 	}
 }

@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import com.lnovaes.tests.AccordionTests;
 import com.lnovaes.tests.AlertsTests;
 import com.lnovaes.tests.IframesTests;
 import com.lnovaes.tests.RegisterTests;
@@ -14,7 +15,8 @@ import com.lnovaes.tests.WindowsTests;
 	RegisterTests.class,
 	AlertsTests.class,
 	WindowsTests.class,
-	IframesTests.class
+	IframesTests.class,
+	AccordionTests.class
 })
 public class TestsSuite {
 

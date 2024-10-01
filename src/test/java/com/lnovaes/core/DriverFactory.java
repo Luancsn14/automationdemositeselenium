@@ -11,7 +11,7 @@ public class DriverFactory {
 		
 	private DriverFactory() {}
 	
-	public static  WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		System.setProperty("webdriver.chrome.driver", "drivers" + File.separator + "chromedriver.exe");
 		if(driver == null) {
 			driver = new ChromeDriver();
