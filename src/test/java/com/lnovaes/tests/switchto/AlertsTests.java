@@ -1,4 +1,4 @@
-package com.lnovaes.tests;
+package com.lnovaes.tests.switchto;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.github.javafaker.Faker;
 import com.lnovaes.core.BaseTest;
-import com.lnovaes.pages.AlertsPage;
+import com.lnovaes.pages.switchto.AlertsPage;
 
 
 public class AlertsTests extends BaseTest {

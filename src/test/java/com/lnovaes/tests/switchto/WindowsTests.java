@@ -1,11 +1,11 @@
-package com.lnovaes.tests;
+package com.lnovaes.tests.switchto;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.lnovaes.core.BaseTest;
-import com.lnovaes.pages.WindowsPage;
+import com.lnovaes.pages.switchto.WindowsPage;
 
 public class WindowsTests extends BaseTest {
 	WindowsPage windowsPage = new WindowsPage();

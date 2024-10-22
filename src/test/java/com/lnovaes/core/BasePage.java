@@ -39,6 +39,8 @@ public class BasePage {
 		return getDriver().findElement(by).getText();
 	}
 	
+	/************ Wait ************/
+	
 	public void waitElementInvisibility(By element, int time) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(time));
 		wait.until(ExpectedConditions.invisibilityOf(getDriver().findElement(element)));
@@ -99,10 +101,23 @@ public class BasePage {
 		getDriver().findElement(multi).click();
 	}
 	
+	public void selectSearchedOptionMulti(By multi) {
+		getDriver().findElement(multi).click();
+	}
+	
 	public List<WebElement> getMultiValues(By field) {
 		List<WebElement> elements = getDriver().findElements(field);
 		return elements;
-	}	
+	}
+	
+	public List<String> getMultiTexts(By field) {
+		List<String> texts = new ArrayList<>();
+
+        for (WebElement text : getMultiValues(field)) {
+            texts.add(text.getText());
+        }
+		return texts;
+	}
 	
 	/************ Combo ************/
 	
@@ -239,5 +254,5 @@ public class BasePage {
 	
 	public boolean isExpanded(By by) {
 		return getDriver().findElement(by).isDisplayed();
-	}	
+	}
 }

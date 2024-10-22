@@ -1,4 +1,4 @@
-package com.lnovaes.tests;
+package com.lnovaes.tests.register;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import com.github.javafaker.Faker;
 import com.lnovaes.core.BaseTest;
-import com.lnovaes.pages.RegisterPage;
+import com.lnovaes.pages.register.RegisterPage;
 
 public class RegisterTests extends BaseTest {
 	RegisterPage registerPage = new RegisterPage();

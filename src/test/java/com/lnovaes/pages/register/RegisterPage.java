@@ -1,4 +1,4 @@
-package com.lnovaes.pages;
+package com.lnovaes.pages.register;
 
 import java.io.File;
 import java.util.List;

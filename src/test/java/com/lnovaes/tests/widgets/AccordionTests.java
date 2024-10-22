@@ -1,11 +1,11 @@
-package com.lnovaes.tests;
+package com.lnovaes.tests.widgets;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.lnovaes.core.BaseTest;
-import com.lnovaes.pages.AccordionPage;
+import com.lnovaes.pages.widgets.AccordionPage;
 
 public class AccordionTests extends BaseTest {
 	AccordionPage accordionPage = new AccordionPage();

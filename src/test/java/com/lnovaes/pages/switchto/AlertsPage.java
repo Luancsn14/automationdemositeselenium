@@ -1,4 +1,4 @@
-package com.lnovaes.pages;
+package com.lnovaes.pages.switchto;
 
 import org.openqa.selenium.By;
 
