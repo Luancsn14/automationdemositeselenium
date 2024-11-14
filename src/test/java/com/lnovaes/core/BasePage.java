@@ -5,7 +5,11 @@ import static com.lnovaes.core.DriverFactory.getDriver;
 import java.io.File;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -37,6 +41,10 @@ public class BasePage {
 	
 	public String getElementText(By by) {
 		return getDriver().findElement(by).getText();
+	}
+	
+	public String getElementTitle(By by) {
+		return getDriver().findElement(by).getAttribute("title");
 	}
 	
 	/************ Wait ************/
@@ -254,5 +262,43 @@ public class BasePage {
 	
 	public boolean isExpanded(By by) {
 		return getDriver().findElement(by).isDisplayed();
+	}
+	
+	/************ Date ************/
+	
+	public static int convertMonth(String month) {
+        Map<String, Integer> months = new HashMap<>();
+        months.put("January", 0);
+        months.put("February", 1);
+        months.put("March", 2);
+        months.put("April", 3);
+        months.put("May", 4);
+        months.put("June", 5);
+        months.put("July", 6);
+        months.put("August", 7);
+        months.put("September", 8);
+        months.put("October", 9);
+        months.put("November", 10);
+        months.put("December", 11);
+        
+        return months.get(month); 
+    }
+	
+	public Date setStartDate(int year){
+		Calendar startDate = Calendar.getInstance();
+		startDate.set(Calendar.YEAR, year);
+		startDate.set(Calendar.MONTH, Calendar.JANUARY);
+		startDate.set(Calendar.DAY_OF_MONTH, 1);
+		
+		return startDate.getTime();		
+	}
+	
+	public Date setEndDate(int year) {
+		Calendar endDate = Calendar.getInstance();
+		endDate.set(Calendar.YEAR, year);
+		endDate.set(Calendar.MONTH, Calendar.DECEMBER);
+		endDate.set(Calendar.DAY_OF_MONTH, 31);
+		
+		return endDate.getTime();
 	}
 }
